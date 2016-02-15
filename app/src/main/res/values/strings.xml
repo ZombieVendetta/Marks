@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Marks</string>
+    <string name="add_subject">Add\nSubject</string>
+    <string name="add_mark">Add mark</string>
+    <string name="marks_activity_back">Back</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="mark">Mark</string>
+    <string name="max_mark">Max mark</string>
+    <string name="description">Description</string>
+    <string name="subject_name">Subject Name</string>
+    <string name="close">Close</string>
+    <string name="toast_add_mark">Enter your mark and maxiumum mark</string>
+    <string name="toast_add_subject">Such subject is already exist</string>
+    <string name="subj_add">Add Subject</string>
+</resources>

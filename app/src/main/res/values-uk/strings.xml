@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="add_mark">Додати оцінку</string>
+    <string name="add_subject">+\nДодати\nПредмет</string>
+    <string name="marks_activity_back">Назад</string>
+    <string name="cancel">Скасувати</string>
+    <string name="delete">Видалити</string>
+    <string name="edit">Редагувати</string>
+    <string name="mark">Оцінка</string>
+    <string name="max_mark">Макс. оцінка</string>
+    <string name="description">Опис</string>
+    <string name="subject_name">Назва предмету</string>
+    <string name="close">Закрити</string>
+    <string name="toast_add_mark">Введіть ваш і максимальний результат</string>
+    <string name="toast_add_subject">Такий предмет уже існує</string>
+    <string name="app_name">Marks</string>
+    <string name="subj_add">Додати предмет</string>
+</resources>
