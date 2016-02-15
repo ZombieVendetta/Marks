@@ -155,8 +155,6 @@ public class SubjectChooseActivity extends Activity implements View.OnClickListe
         textView.setPadding(10, 10, 10, 10);
         linearLayout.addView(textView);
 
-//        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
-
         Toast toast = new Toast(this);
         toast.setView(linearLayout);
         toast.setDuration(Toast.LENGTH_SHORT);

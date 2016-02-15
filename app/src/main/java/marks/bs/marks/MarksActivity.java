@@ -364,7 +364,6 @@ public class MarksActivity extends Activity implements View.OnClickListener {
             textView.setPadding(10, 10, 10, 10);
             linearLayout.addView(textView);
 
-            //Toast toast = Toast.makeText(this, R.string.toast_add_mark, Toast.LENGTH_SHORT);
             Toast toast = new Toast(this);
             toast.setView(linearLayout);
             toast.setDuration(Toast.LENGTH_SHORT);
