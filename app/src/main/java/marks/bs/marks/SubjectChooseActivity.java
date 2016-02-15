@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -146,7 +147,20 @@ public class SubjectChooseActivity extends Activity implements View.OnClickListe
 
 
     private void showToast(String text) {
-        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+        LinearLayout linearLayout = new LinearLayout(this);
+        TextView textView = new TextView(this);
+        textView.setText(text);
+        textView.setBackground(getResources().getDrawable(R.drawable.toast_white_style));
+        textView.setTextSize(14);
+        textView.setPadding(10, 10, 10, 10);
+        linearLayout.addView(textView);
+
+//        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+
+        Toast toast = new Toast(this);
+        toast.setView(linearLayout);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.show();
     }
 
 

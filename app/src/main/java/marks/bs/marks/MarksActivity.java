@@ -356,7 +356,18 @@ public class MarksActivity extends Activity implements View.OnClickListener {
         String description = this.description.getText().toString();
 
         if(mark.isEmpty() || maxMark.isEmpty()) {
-            Toast toast = Toast.makeText(this, R.string.toast_add_mark, Toast.LENGTH_SHORT);
+            LinearLayout linearLayout = new LinearLayout(this);
+            TextView textView = new TextView(this);
+            textView.setText(R.string.toast_add_mark);
+            textView.setBackground(getResources().getDrawable(R.drawable.toast_white_style));
+            textView.setTextSize(14);
+            textView.setPadding(10, 10, 10, 10);
+            linearLayout.addView(textView);
+
+            //Toast toast = Toast.makeText(this, R.string.toast_add_mark, Toast.LENGTH_SHORT);
+            Toast toast = new Toast(this);
+            toast.setView(linearLayout);
+            toast.setDuration(Toast.LENGTH_SHORT);
             toast.show();
             return null;
         } else {
