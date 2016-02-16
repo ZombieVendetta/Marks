@@ -209,8 +209,6 @@ public class MarksActivity extends Activity implements View.OnClickListener {
 
 
     private void addTableHeader() {
-        DisplayMetrics metrics = this.getResources().getDisplayMetrics();
-
         float textSize = 16;
 
         TableRow row = new TableRow(this);
@@ -274,7 +272,7 @@ public class MarksActivity extends Activity implements View.OnClickListener {
         text.setOnClickListener(this);
         text.setTextSize(textSize);
         text.setText(Integer.toString(mark.getMark()));
-        text.append("(" + percents + "% = " + countGrade(percents)  + ")");
+        text.append("(" + percents + "% = " + countGrade(percents) + ")");
         row.addView(text, 0);
 
         text = new TextView(this);
@@ -290,6 +288,8 @@ public class MarksActivity extends Activity implements View.OnClickListener {
         text.setTextSize(textSize);
         text.setText(mark.getDescription());
         row.addView(text, 2);
+        row.setBackground(getResources().getDrawable(R.drawable.table_row_background));
+        row.setPadding(2, 2, 2, 2);
 
         row.setMark(mark);
 
@@ -328,6 +328,8 @@ public class MarksActivity extends Activity implements View.OnClickListener {
         text.setTextSize(textSize);
         text.setText(newMark.getDescription());
         row.addView(text, 2);
+        row.setBackground(getResources().getDrawable(R.drawable.table_row_background));
+        row.setPadding(2, 2, 2, 2);
 
         row.setMark(newMark);
 
