@@ -5,12 +5,15 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
@@ -120,6 +123,14 @@ public class SubjectChooseActivity extends Activity implements View.OnClickListe
         subjects = data.getSubjects();
 
         showSavedSubjects();
+
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        ((AnimationDrawable)((ImageView) findViewById(R.id.animView)).getDrawable()).start();
     }
 
     @Override

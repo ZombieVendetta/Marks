@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TableLayout;
@@ -118,6 +120,12 @@ public class MarksActivity extends Activity implements View.OnClickListener {
 
         showMarks();
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        ((AnimationDrawable)((ImageView) findViewById(R.id.animView1)).getDrawable()).start();
     }
 
     @Override
