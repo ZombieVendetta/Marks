@@ -1,14 +1,10 @@
 package marks.bs.marks;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -44,7 +40,6 @@ public class MarksActivity extends Activity implements View.OnClickListener {
     private Mark markEditing;
     private String currentSubject;
     private AlertDialog.Builder dialogBuilder;
-    private AlertDialog.Builder viewDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -181,7 +176,7 @@ public class MarksActivity extends Activity implements View.OnClickListener {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 deleteMark(((DataTableRow) v.getParent()).getMark());
-                ((ViewGroup) ((View) v.getParent()).getParent()).removeView((DataTableRow) v.getParent());
+                ((ViewGroup) (v.getParent()).getParent()).removeView((DataTableRow) v.getParent());
                 showAddMark(false);
                 clearAddMarkLayout();
             }
@@ -211,7 +206,6 @@ public class MarksActivity extends Activity implements View.OnClickListener {
         marks = data.getMarks(currentSubject);
 
         dialogBuilder = new AlertDialog.Builder(this);
-        viewDialog = new AlertDialog.Builder(this);
 
     }
 
@@ -222,23 +216,26 @@ public class MarksActivity extends Activity implements View.OnClickListener {
         TableRow row = new TableRow(this);
 
         TextView textView = new TextView(this);
+        textView.setTextColor(getResources().getColor(R.color.white_color));
         textView.setTextSize(textSize);
         textView.setText(R.string.mark);
         textView.append("    ");
         row.addView(textView, 0);
 
         textView = new TextView(this);
+        textView.setTextColor(getResources().getColor(R.color.white_color));
         textView.setTextSize(textSize);
         textView.setText(R.string.max_mark);
         textView.append("    ");
         row.addView(textView, 1);
 
         textView = new TextView(this);
+        textView.setTextColor(getResources().getColor(R.color.white_color));
         textView.setTextSize(textSize);
         textView.setText(R.string.description);
         row.addView(textView, 2);
 
-        row.setBackgroundColor(Color.LTGRAY);
+        row.setBackgroundColor(getResources().getColor(R.color.green_color));
 
         tableLayout.addView(row);
 
@@ -276,6 +273,7 @@ public class MarksActivity extends Activity implements View.OnClickListener {
         int percents = (int) Math.round(((float)mark.getMark() / (float)mark.getMaxMark()) * 100.0);
 
         text = new TextView(this);
+        text.setTextColor(getResources().getColor(R.color.green_color));
         text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         text.setOnClickListener(this);
         text.setTextSize(textSize);
@@ -284,6 +282,7 @@ public class MarksActivity extends Activity implements View.OnClickListener {
         row.addView(text, 0);
 
         text = new TextView(this);
+        text.setTextColor(getResources().getColor(R.color.green_color));
         text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         text.setOnClickListener(this);
         text.setTextSize(textSize);
@@ -291,6 +290,7 @@ public class MarksActivity extends Activity implements View.OnClickListener {
         row.addView(text, 1);
 
         text = new TextView(this);
+        text.setTextColor(getResources().getColor(R.color.green_color));
         text.setSingleLine(false);
         text.setOnClickListener(this);
         text.setTextSize(textSize);
@@ -314,6 +314,7 @@ public class MarksActivity extends Activity implements View.OnClickListener {
         int percents = (int) Math.round(((float)newMark.getMark() / (float)newMark.getMaxMark()) * 100.0);
 
         text = new TextView(this);
+        text.setTextColor(getResources().getColor(R.color.green_color));
         text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         text.setOnClickListener(this);
         text.setOnClickListener(this);
@@ -323,6 +324,7 @@ public class MarksActivity extends Activity implements View.OnClickListener {
         row.addView(text, 0);
 
         text = new TextView(this);
+        text.setTextColor(getResources().getColor(R.color.green_color));
         text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         text.setOnClickListener(this);
         text.setOnClickListener(this);
@@ -331,6 +333,7 @@ public class MarksActivity extends Activity implements View.OnClickListener {
         row.addView(text, 1);
 
         text = new TextView(this);
+        text.setTextColor(getResources().getColor(R.color.green_color));
         text.setOnClickListener(this);
         text.setOnClickListener(this);
         text.setTextSize(textSize);

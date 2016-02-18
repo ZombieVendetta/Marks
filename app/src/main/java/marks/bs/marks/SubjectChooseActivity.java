@@ -183,9 +183,11 @@ public class SubjectChooseActivity extends Activity implements View.OnClickListe
     private void addSubjectButton(final String nameOfSubject) {
         final Button subject = new Button(this);
 
+        subject.setTextColor(getResources().getColorStateList(R.color.button_text_color));
+
         subject.setHeight((int) buttonWidth);
         subject.setWidth((int) buttonHeight);
-        subject.setBackground(getResources().getDrawable(R.drawable.white_style));
+        subject.setBackground(getResources().getDrawable(R.drawable.button_states_drawable));
 
         subject.setText(nameOfSubject);
         subject.setTextSize(fontSize);
